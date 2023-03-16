@@ -17,3 +17,6 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+docker-compose.yml
+/public/mix-manifest.json
+/public/dist
