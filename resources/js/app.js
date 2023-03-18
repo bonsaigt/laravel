@@ -4,19 +4,27 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-import './bootstrap';
-import { createApp } from 'vue';
+import "./bootstrap";
 
-/**
- * Next, we will create a fresh Vue application instance. You may then begin
- * registering components with the application instance so they are ready
- * to use in your application's views. An example is included for you.
- */
+import Vue from 'vue';
 
-const app = createApp({});
+Vue.filter('date', value => moment(value).format('DD/MM/YYYY'))
+Vue.filter('datetime', value => moment(value).format('DD/MM/YYYY HH:mm'))
+Vue.filter('number', (value, decimals) => accounting.formatNumber(value, decimals))
 
-import ExampleComponent from './components/ExampleComponent.vue';
-app.component('example-component', ExampleComponent);
+// Crud
+import CrudIndex from '../../vendor/bonsai/crud/src/resources/js/views/CrudIndex.vue';
+import CrudEdit from '../../vendor/bonsai/crud/src/resources/js/views/CrudEdit.vue';
+import CrudHeader from '../../vendor/bonsai/crud/src/resources/js/components/CrudHeader.vue';
+import CrudField from '../../vendor/bonsai/crud/src/resources/js/components/CrudField.vue';
+import CrudColumn from '../../vendor/bonsai/crud/src/resources/js/components/CrudColumn.vue';
+import CrudButton from '../../vendor/bonsai/crud/src/resources/js/components/CrudButton.vue';
+import Cargando from '../../vendor/bonsai/crud/src/resources/js/components/Cargando.vue';
+
+// app
+import Home from './views/home/Index.vue';
+
+window.Vue = Vue;
 
 /**
  * The following block of code may be used to automatically register your
@@ -26,14 +34,31 @@ app.component('example-component', ExampleComponent);
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-// Object.entries(import.meta.glob('./**/*.vue', { eager: true })).forEach(([path, definition]) => {
-//     app.component(path.split('/').pop().replace(/\.\w+$/, ''), definition.default);
-// });
+// const files = require.context("./", true, /\.vue$/i);
+// files
+//     .keys()
+//     .map((key) =>
+//         Vue.component(key.split("/").pop().split(".")[0], files(key).default)re  
+//     );
+
+// crud
+Vue.component('crud-index', CrudIndex);
+Vue.component('crud-edit', CrudEdit);
+Vue.component('crud-header', CrudHeader);
+Vue.component('crud-field', CrudField);
+Vue.component('crud-column', CrudColumn);
+Vue.component('crud-button', CrudButton);
+Vue.component('cargando', Cargando);
+
+// app
+Vue.component('home', Home);
 
 /**
- * Finally, we will attach the application instance to a HTML element with
- * an "id" attribute of "app". This element is included with the "auth"
- * scaffolding. Otherwise, you will need to add an element yourself.
+ * Next, we will create a fresh Vue application instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-app.mount('#app');
+const app = new Vue({
+    el: "#app",
+});
