@@ -2,8 +2,11 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HelpController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Catalogs\RolesController;
 use App\Http\Controllers\Catalogs\UsersController;
+use App\Http\Controllers\Catalogs\PermissionsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +21,13 @@ use App\Http\Controllers\Catalogs\UsersController;
 
 Auth::routes();
 
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['auth', 'cerberus']], function () {
     Route::get('/', [HomeController::class, 'index'])->name('index.index');
+    Route::get('help', [HelpController::class, 'index'])->name('help');
 
     Route::prefix('catalogs')->name('catalogs.')->group(function () {
         Route::resource('users', UsersController::class);
+        Route::resource('roles', RolesController::class);
+        Route::resource('permissions', PermissionsController::class);
     });
 });

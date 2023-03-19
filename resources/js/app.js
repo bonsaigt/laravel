@@ -23,6 +23,8 @@ import Cargando from '../../vendor/bonsai/crud/src/resources/js/components/Carga
 
 // app
 import Home from './views/home/Index.vue';
+import Permissions from './views/catalogs/Permissions.vue';
+import Permission from './components/Permission.vue';
 
 window.Vue = Vue;
 
@@ -52,6 +54,8 @@ Vue.component('cargando', Cargando);
 
 // app
 Vue.component('home', Home);
+Vue.component('permissions', Permissions);
+Vue.component('permission', Permission);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

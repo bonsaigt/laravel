@@ -24,7 +24,7 @@
                 </ul>
             </nav>
             <aside class="main-sidebar sidebar-dark-primary elevation-4">
-                <a href="/" class="brand-link" target="_blank">
+                <a href="/" class="brand-link">
                     <span class="fa-stack text-primary">
                         <i class="fas fa-circle fa-stack-2x fa-inverse"></i>
                         <i class="fas fa-code fa-stack-1x"></i>

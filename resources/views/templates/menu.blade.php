@@ -13,6 +13,12 @@
                 <p>Usuarios</p>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="/catalogs/roles" class="nav-link">
+                <i class="nav-icon fa fa-lock"></i>
+                <p>Roles</p>
+            </a>
+        </li>
     </ul>
 </li>
 <li class="nav-item">
