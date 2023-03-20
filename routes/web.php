@@ -19,7 +19,7 @@ use App\Http\Controllers\Catalogs\PermissionsController;
 |
  */
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::group(['middleware' => ['auth', 'cerberus']], function () {
     Route::get('/', [HomeController::class, 'index'])->name('index.index');
