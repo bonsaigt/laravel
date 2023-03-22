@@ -1,12 +1,12 @@
 <template>
     <tr>
-        <td width="90%">{{ permission.title }}</td>
+        <td width="90%">{{ role.name }}</td>
         <td class="text-center">
             <div class="mb-3 form-check">
                 <input
                     type="checkbox"
                     class="form-check-input"
-                    v-model="permission.selected"
+                    v-model="role.selected"
                 />
             </div>
         </td>
@@ -15,6 +15,6 @@
 
 <script>
 export default {
-    props: ["permission"],
+    props: ["role"],
 };
 </script>

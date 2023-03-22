@@ -15,8 +15,13 @@ class Cerberus
      */
     public function handle(Request $request, Closure $next): Response
     {
+        $user = Auth::user();
+
+        if ($user->hasRole('Super Admin')) {
+            return $next($request);
+        }
+
         $route_name  = $request->route()->action['as'];
-        $user        = Auth::user();
         $permissions = $user->getAllPermissions()
             ->pluck('name')
             ->toArray();

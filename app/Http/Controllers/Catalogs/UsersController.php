@@ -23,6 +23,14 @@ class UsersController extends CrudController
                 ['title' => 'Email', 'column' => 'email'],
                 ['title' => 'Contraseña', 'column' => 'password', 'type' => 'password', 'visible' => false],
             ],
+            'buttons'    => [
+                [
+                    'type'   => 'warning',
+                    'target' => '',
+                    'icono'  => 'fa fa-lock',
+                    'url'    => '/catalogs/userroles/{id}',
+                ],
+            ],
         ]);
     }
 }

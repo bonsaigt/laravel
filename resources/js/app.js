@@ -25,6 +25,8 @@ import Cargando from '../../vendor/bonsai/crud/src/resources/js/components/Carga
 import Home from './views/home/Index.vue';
 import Permissions from './views/catalogs/Permissions.vue';
 import Permission from './components/Permission.vue';
+import Roles from './views/catalogs/Roles.vue';
+import Role from './components/Role.vue';
 
 window.Vue = Vue;
 
@@ -56,6 +58,8 @@ Vue.component('cargando', Cargando);
 Vue.component('home', Home);
 Vue.component('permissions', Permissions);
 Vue.component('permission', Permission);
+Vue.component('roles', Roles);
+Vue.component('role', Role);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

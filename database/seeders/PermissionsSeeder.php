@@ -93,5 +93,24 @@ class PermissionsSeeder extends Seeder
             'title' => 'Catálogos - Roles - Editar',
         ]);
 
+        Permission::create([
+            'name'  => 'catalogs.permissions.show',
+            'title' => 'Catálogos - Roles - Permisos - Ver',
+        ]);
+
+        Permission::create([
+            'name'  => 'catalogs.permissions.store',
+            'title' => 'Catálogos - Roles - Permisos - Guardar',
+        ]);
+
+        Permission::create([
+            'name'  => 'catalogs.userroles.show',
+            'title' => 'Catálogos - Usuarios - Roles - Ver',
+        ]);
+
+        Permission::create([
+            'name'  => 'catalogs.userroles.store',
+            'title' => 'Catálogos - Usuarios - Roles - Guardar',
+        ]);
     }
 }

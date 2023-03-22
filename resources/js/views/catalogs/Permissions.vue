@@ -66,7 +66,7 @@ export default {
             axios
                 .post("/catalogs/permissions", {
                     id: this.role.id,
-                    permissions: this.permissions,
+                    permissions: this.finalPermissions,
                 })
                 .then((res) => {
                     window.location = "/catalogs/roles";

@@ -6,6 +6,7 @@ use App\Http\Controllers\HelpController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Catalogs\RolesController;
 use App\Http\Controllers\Catalogs\UsersController;
+use App\Http\Controllers\Catalogs\UserRolesController;
 use App\Http\Controllers\Catalogs\PermissionsController;
 
 /*
@@ -28,6 +29,7 @@ Route::group(['middleware' => ['auth', 'cerberus']], function () {
     Route::prefix('catalogs')->name('catalogs.')->group(function () {
         Route::resource('users', UsersController::class);
         Route::resource('roles', RolesController::class);
-        Route::resource('permissions', PermissionsController::class);
+        Route::resource('permissions', PermissionsController::class, ['only' => ['show', 'store']]);
+        Route::resource('userroles', UserRolesController::class, ['only' => ['show', 'store']]);
     });
 });
