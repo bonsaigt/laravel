@@ -20,3 +20,4 @@ yarn-error.log
 docker-compose.yml
 /public/mix-manifest.json
 /public/dist
+public/.DS_Store

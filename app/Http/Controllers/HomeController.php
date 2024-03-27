@@ -14,4 +14,9 @@ class HomeController extends Controller
                 'message' => "Bienvenido " . Auth::user()->name,
             ]);
     }
+
+    public function healthcheck()
+    {
+        return response()->json('ok');
+    }
 }

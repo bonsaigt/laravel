@@ -20,10 +20,9 @@ use App\Http\Controllers\Catalogs\PermissionsController;
 |
  */
 
-Auth::routes(['register' => true]);
+Auth::routes(['register' => false]);
 
-// Route::group(['middleware' => ['auth', 'cerberus']], function () {
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['auth', 'cerberus']], function () {
     Route::get('/', [HomeController::class, 'index'])->name('index.index');
     Route::get('help', [HelpController::class, 'index'])->name('help');
 
@@ -34,3 +33,5 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('userroles', UserRolesController::class, ['only' => ['show', 'store']]);
     });
 });
+
+Route::get('healthcheck', [HomeController::class, 'healthcheck']);

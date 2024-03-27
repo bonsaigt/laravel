@@ -5,6 +5,6 @@ class HelpController extends Controller
 {
     public function index()
     {
-
+        dd('help wanted');
     }
 }

@@ -13,6 +13,7 @@ class PermissionsSeeder extends Seeder
     {
         Permission::truncate();
 
+        // tiene que ser así por el paquete
         Permission::create([
             'name'  => 'index.index',
             'title' => 'Inicio',
